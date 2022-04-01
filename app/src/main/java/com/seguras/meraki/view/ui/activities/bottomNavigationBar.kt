@@ -11,10 +11,18 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.seguras.meraki.R
 import com.seguras.meraki.databinding.ActivityBottomNavigationBarBinding
+import com.seguras.meraki.view.ui.fragments.CarritoFragment
+import com.seguras.meraki.view.ui.fragments.CatalogoFragment
+import com.seguras.meraki.view.ui.fragments.HomeFragment
+import com.seguras.meraki.view.ui.fragments.PedidosFragment
 
 class bottomNavigationBar : AppCompatActivity() {
 
     private lateinit var binding: ActivityBottomNavigationBarBinding
+    private lateinit var homeFragment: HomeFragment
+    private lateinit var catalogoFragment: CatalogoFragment
+    private lateinit var pedidosFragment: PedidosFragment
+    private lateinit var carritoFragment: CarritoFragment
     private val selectedTab: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +45,12 @@ class bottomNavigationBar : AppCompatActivity() {
         val tvPedidos: TextView = binding.tvPedidos
         val tvCart: TextView = binding.tvCart
 
+        homeFragment = HomeFragment()
+        catalogoFragment = CatalogoFragment()
+        pedidosFragment = PedidosFragment()
+        carritoFragment = CarritoFragment()
+
+        supportFragmentManager.beginTransaction().add(R.id.flFragmentCont, homeFragment).commit()
     }
 
     fun clickHome(view: View) {
@@ -55,6 +69,9 @@ class bottomNavigationBar : AppCompatActivity() {
             scaleAnimation.duration = 200
             scaleAnimation.fillAfter = true
             homeLayout.startAnimation(scaleAnimation)
+
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(flFragmentCont.id,homeFragment).commit()
         }
     }
 
@@ -74,6 +91,9 @@ class bottomNavigationBar : AppCompatActivity() {
             scaleAnimation.duration = 200
             scaleAnimation.fillAfter = true
             catalogoLayout.startAnimation(scaleAnimation)
+
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(flFragmentCont.id,catalogoFragment).commit()
         }
     }
     fun clickPedidos(view: View) {
@@ -92,6 +112,9 @@ class bottomNavigationBar : AppCompatActivity() {
             scaleAnimation.duration = 200
             scaleAnimation.fillAfter = true
             pedidosLayout.startAnimation(scaleAnimation)
+
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(flFragmentCont.id,pedidosFragment).commit()
         }
     }
     fun clickCarrito(view: View) {
@@ -110,6 +133,9 @@ class bottomNavigationBar : AppCompatActivity() {
             scaleAnimation.duration = 200
             scaleAnimation.fillAfter = true
             carritoLayout.startAnimation(scaleAnimation)
+
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(flFragmentCont.id,carritoFragment).commit()
         }
     }
 }
