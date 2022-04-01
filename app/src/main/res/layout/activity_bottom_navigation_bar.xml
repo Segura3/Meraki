@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue3"
+    tools:context=".view.ui.activities.bottomNavigationBar">
+
+    <FrameLayout
+        android:id="@+id/flFragmentCont"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/navBar"/>
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        tools:targetApi="lollipop">
+
+        <LinearLayout
+            android:id="@+id/homeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/rb_home"
+            android:gravity="center"
+            android:onClick="clickHome"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
+
+            <ImageView
+                android:id="@+id/ivHome"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_home">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Home"
+                android:textColor="@color/blue600"
+                android:textSize="15sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/catalogoLayout"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:onClick="clickCatalog">
+            <ImageView
+                android:id="@+id/ivCat"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_shirt">
+            </ImageView>
+            <TextView
+                android:id="@+id/tvCat"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catalogo"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"
+                android:textColor="@color/blue600">
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/pedidosLayout"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:onClick="clickPedidos">
+            <ImageView
+                android:id="@+id/ivPedidos"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_boxes">
+            </ImageView>
+            <TextView
+                android:id="@+id/tvPedidos"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedidos"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"
+                android:textColor="@color/blue600">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/carritoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:onClick="clickCarrito"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
+
+            <ImageView
+                android:id="@+id/ivCart"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_shopping_cart">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Carrito"
+                android:textColor="@color/blue600"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:visibility="gone">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Meraki</string>
+    <string name="email">Correo electrónico</string>
+    <string name="psw">Contraseña</string>
+    <string name="entrar">Entrar</string>
+    <string name="forgPass">¿Olvidaste tu contraseña?</string>
+    <string name="noCuenta">¿No tienes cuenta?</string>
+    <string name="registrate">Registrate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

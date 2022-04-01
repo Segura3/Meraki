@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ui.activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/ivLogoi"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:src="@drawable/logofinal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="@string/email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoi"
+        app:layout_constraintVertical_bias="0.08"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:startIconDrawable="@drawable/ic_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!--style="@style/TextAppearance.MaterialComponents.Headline6">-->
+        <!--style="@style/Widget.App.TextInputLayout">-->
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilMail"
+        app:layout_constraintVertical_bias="0.08"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        android:hint="@string/psw"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:endIconMode="password_toggle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!--style="@style/Widget.App.TextInputLayout">-->
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEntrar"
+        android:layout_width="203dp"
+        android:layout_height="48dp"
+        android:onClick="click"
+        android:text="@string/entrar"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPass"
+        app:layout_constraintVertical_bias="0.20">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnForgot"
+        android:layout_width="159dp"
+        android:layout_height="30dp"
+        android:letterSpacing="0"
+        android:text="@string/forgPass"
+        android:textColor="@color/black"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilPass"
+        app:layout_constraintVertical_bias="0.04"
+        style="@style/Widget.MaterialComponents.Button.TextButton">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNocuenta"
+        android:layout_width="105dp"
+        android:layout_height="18dp"
+        android:text="@string/noCuenta"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
+        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.40">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/regitrate"
+        android:layout_width="75dp"
+        android:layout_height="30dp"
+        android:letterSpacing="0"
+        android:text="@string/registrate"
+        android:textColor="@color/black"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
+        app:layout_constraintVertical_bias="0.04"
+        style="@style/Widget.MaterialComponents.Button.TextButton">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvOpcReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="------------------------     O, entra con     ------------------------"
+        android:textSize="11sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNocuenta"
+        app:layout_constraintVertical_bias="0.08">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOpcReg"
+        app:layout_constraintVertical_bias="0.16000003">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/google"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/google">
+
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/facebook"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/facebook">
+
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/apple"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/apple">
+
+        </com.google.android.material.imageview.ShapeableImageView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
