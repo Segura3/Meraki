@@ -5,29 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.seguras.meraki.R
+import com.seguras.meraki.databinding.FragmentPedidosBinding
+import com.seguras.meraki.model.Pedido
+import com.seguras.meraki.view.adapter.PedidoAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PedidosFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PedidosFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var binding: FragmentPedidosBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -35,26 +25,32 @@ class PedidosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pedidos, container, false)
+        binding = FragmentPedidosBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PedidosFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PedidosFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var datos = ArrayList<Pedido>()
+
+        //Se necesita obtener esta informacion de algua fuente como una base de datos
+        val pedido = Pedido(36524, "10 de enero de 2022", "100", "1","Procesado")
+        val pedido2 = Pedido(10785, "26 de octubre de 2021", "150", "2","Procesado")
+        val pedido3 = Pedido(37569, "15 de marzo de 2022", "150", "2","Procesado")
+        val pedido4 = Pedido(20485, "30 de diciembre de 2021", "180", "1", "Procesado")
+        datos.add(pedido)
+        datos.add(pedido2)
+        datos.add(pedido3)
+        datos.add(pedido4)
+        //datos.add(producto5)
+
+
+        val adapter = PedidoAdapter(datos)
+
+        with(binding){
+            rvPedido.layoutManager = LinearLayoutManager(requireContext())
+            rvPedido.adapter = adapter
+        }
     }
 }

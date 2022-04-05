@@ -4,49 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.fragments.HomeFragment">
+    tools:context=".view.ui.fragments.HomeFragment"
+    android:background="@color/white">
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:background="@color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/header">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/tvHola"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    tools:src="@tools:sample/avatars" />
+                    android:text="Hola Alberto"
+                    android:layout_weight="1"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="50dp"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"/>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginEnd="50dp"
+                    app:srcCompat="@drawable/ic_user" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="0dp">
+
+                <ImageButton
+                    android:id="@+id/ibCatalogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="clickGoCat"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/catalogo"
+                    android:background="@color/white"
+                    android:layout_marginTop="16dp"/>
+
+                <ImageButton
+                    android:id="@+id/ibDiseno"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="clickGoDiseno"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/pdiseno"
+                    android:background="@color/white"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"></LinearLayout>
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ibPedidos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="clickGoPedidos"
+                    android:layout_weight="1"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/pedidos"
+                    android:background="@color/white"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"/>
+
+                <ImageButton
+                    android:id="@+id/ibPromociones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="clickGoPromo"
+                    android:layout_weight="1"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/promociones"
+                    android:background="@color/white"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPreguntas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="clickGoPreguntas"
+                    android:text="@string/preguntas_frecuentes"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    app:cornerRadius="10dp"
+                    app:rippleColor="@color/white">
+
+                </com.google.android.material.button.MaterialButton>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnContactanos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="clickGoContacto"
+                    android:text="@string/contactanos"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    app:cornerRadius="10dp">
+
+                </com.google.android.material.button.MaterialButton>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

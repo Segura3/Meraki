@@ -43,7 +43,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietMail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +74,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietPass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:inputType="textPassword">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -95,9 +97,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnForgot"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="159dp"
         android:layout_height="30dp"
         android:letterSpacing="0"
+        android:onClick="clickForgot"
         android:text="@string/forgPass"
         android:textColor="@color/black"
         android:textSize="8sp"
@@ -106,8 +110,7 @@
         app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilPass"
-        app:layout_constraintVertical_bias="0.04"
-        style="@style/Widget.MaterialComponents.Button.TextButton">
+        app:layout_constraintVertical_bias="0.04">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -128,9 +131,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/regitrate"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="75dp"
         android:layout_height="30dp"
         android:letterSpacing="0"
+        android:onClick="clickReg"
         android:text="@string/registrate"
         android:textColor="@color/black"
         android:textSize="8sp"
@@ -139,8 +144,7 @@
         app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
-        app:layout_constraintVertical_bias="0.04"
-        style="@style/Widget.MaterialComponents.Button.TextButton">
+        app:layout_constraintVertical_bias="0.04">
 
     </com.google.android.material.button.MaterialButton>
 

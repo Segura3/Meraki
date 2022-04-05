@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Meraki">
         <activity
+            android:name=".view.ui.activities.Finalizar"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activities.Pago"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.fragments.MainActivity"
             android:exported="false" />
         <activity
@@ -28,7 +34,7 @@
         <activity
             android:name=".view.ui.activities.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Meraki"></activity>
+            android:theme="@style/Theme.Meraki" />
     </application>
 
 </manifest>

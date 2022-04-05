@@ -1,5 +1,6 @@
 package com.seguras.meraki.view.ui.activities
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.view.animation.ScaleAnimation
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.seguras.meraki.R
 import com.seguras.meraki.databinding.ActivityBottomNavigationBarBinding
 import com.seguras.meraki.view.ui.fragments.CarritoFragment
@@ -137,5 +139,36 @@ class bottomNavigationBar : AppCompatActivity() {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(flFragmentCont.id,carritoFragment).commit()
         }
+    }
+
+    fun clickGoCat(view: View) {
+        clickCatalog(view)
+    }
+
+    fun clickGoDiseno(view: View) {
+        Toast.makeText(this,"Diseño personalizado en construcción", Toast.LENGTH_SHORT).show()
+    }
+    fun clickGoPedidos(view: View) {
+        clickPedidos(view)
+    }
+    fun clickGoPromo(view: View) {
+        //Necesario implementar un filtro para el catalogo, temporalmente solo llamamos al catalogo
+        clickCatalog(view)
+    }
+    fun clickGoPreguntas(view: View) {
+        Toast.makeText(this,"Preguntas frecuentes en construcción", Toast.LENGTH_SHORT).show()
+    }
+    fun clickGoContacto(view: View) {
+        Toast.makeText(this,"Contactanos en construcción", Toast.LENGTH_SHORT).show()
+    }
+
+
+    fun comprar(view: View) {
+        val intent = Intent(this, Pago::class.java)
+        startActivity(intent)
+    }
+
+    fun clickGoHome(view: View) {
+        clickHome(view)
     }
 }
